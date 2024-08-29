@@ -4,33 +4,37 @@
 
 ## 打包插件
 
-=== "Powershell Core"
+:::tabs#pack_method
 
-    在 Powershell Core 中使用以下命令将插件输出/发布目录打包到一个扩展名为`.cipx`的`zip`压缩文件中。
+@tab Powershell Core
 
-    ``` powershell
-    Compress-Archive -Path "（你的插件编译输出目录，如 E:\xxx\MyPlugin\bin\Release\net8.0-windows\）" -DestinationPath ./myplugin.cipx
-    ```
+在 Powershell Core 中使用以下命令将插件输出/发布目录打包到一个扩展名为`.cipx`的`zip`压缩文件中。
 
-=== "手动打包"
+``` powershell
+Compress-Archive -Path "（你的插件编译输出目录，如 E:\xxx\MyPlugin\bin\Release\net8.0-windows\）" -DestinationPath ./myplugin.cipx
+```
 
-    1. 将您的插件加载到 ClassIsland 中。
-    2. 在 ClassIsland 中打开[【应用设置】->【插件】](classisland://app/settings/classisland.plugins)。
-    3. 选择要打包的插件，点击插件详细界面的【更多选项…（右上角三个点）】，点击【打包插件…】
+@tab 手动打包
 
-        ![1722514478099](image/publishing/1722514478099.png)
+1. 将您的插件加载到 ClassIsland 中。
+2. 在 ClassIsland 中打开[【应用设置】->【插件】](classisland://app/settings/classisland.plugins)。
+3. 选择要打包的插件，点击插件详细界面的【更多选项…（右上角三个点）】，点击【打包插件…】
 
-        ![1722514515956](image/publishing/1722514515956.png)
+    ![1722514478099](image/publishing/1722514478099.png)
 
-    4. 选择保存插件包的位置。
-    5. 打包完成。
+    ![1722514515956](image/publishing/1722514515956.png)
+
+4. 选择保存插件包的位置。
+5. 打包完成。
+:::
 
 ## 上架到插件市场
 
 [插件源仓库]: https://github.com/ClassIsland/PluginIndex
 
-!!! info
-    这里的插件市场指应用内置的插件源。
+:::info
+这里的插件市场指应用内置的插件源。
+:::
 
 **上架插件市场的插件必须满足以下条件：**
 
@@ -66,24 +70,27 @@ assetsRoot: master/HelloWorldPlugin
 
 您还需要将打包后的插件上传到**您的插件的仓库**的 Release 中，并添加 MD5 校验信息。
 
-=== "通过 Powershell"
+:::tabs#pack_method
 
-    1. 在[此处](https://github.com/ClassIsland/ClassIsland/raw/master/tools/generate-md5.ps1)下载 MD5 计算 Powershell 脚本，并重命名为 `generate-md5.ps1`
-    2. 运行以下命令：
-        ```powershell
-        ./generate-md5.ps1 打包输出目录
-        ```
-        此命令将运行 MD5 计算脚本，并将符合格式要求的 MD5 校验信息输出到文件 `checksums.md` 中。
-    3. 上传插件包到 Releases，并在发行日志中填入 `checksums.md` 的内容。
+@tab 通过 Powershell
 
-=== "手动添加"
+1. 在[此处](https://github.com/ClassIsland/ClassIsland/raw/master/tools/generate-md5.ps1)下载 MD5 计算 Powershell 脚本，并重命名为 `generate-md5.ps1`
+2. 运行以下命令：
+    ```powershell
+    ./generate-md5.ps1 打包输出目录
+    ```
+    此命令将运行 MD5 计算脚本，并将符合格式要求的 MD5 校验信息输出到文件 `checksums.md` 中。
+3. 上传插件包到 Releases，并在发行日志中填入 `checksums.md` 的内容。
 
-    1. 利用 7z 等工具计算插件包的 MD5。
-    2. 上传插件包到 Releases，并按以下格式在发行日志中加入校验信息：
-        ```markdown
-        <!-- CLASSISLAND_PKG_MD5 {"插件包文件名": "得到的 MD5"} -->
-        ```
-        其中被注释标签包裹的 json 对象是一个以文件名为键，MD5 值为值的字典。如果有多个文件，可以扩充此字典。
+@tab 手动添加
+
+1. 利用 7z 等工具计算插件包的 MD5。
+2. 上传插件包到 Releases，并按以下格式在发行日志中加入校验信息：
+   ```markdown
+   <!-- CLASSISLAND_PKG_MD5 {"插件包文件名": "得到的 MD5"} -->
+   ```
+   其中被注释标签包裹的 json 对象是一个以文件名为键，MD5 值为值的字典。如果有多个文件，可以扩充此字典。
+:::
 
 补充后的插件清单文件需要重命名为插件 id，并上传到[插件源仓库]根目录下的[`index`](https://github.com/ClassIsland/PluginIndex/tree/main/index)文件夹中。
 

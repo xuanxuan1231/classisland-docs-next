@@ -1,3 +1,10 @@
+
+node_modules/
+src/.vuepress/.cache/
+src/.vuepress/.temp/
+src/.vuepress/dist/
+pdf/
+.DS_Store
 venv/**
 out/**
 */__pycache__/**

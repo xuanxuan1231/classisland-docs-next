@@ -2,13 +2,19 @@
 
 本教程将指引您手动编写集控配置文件，并将其静态托管到网上。
 
-!!! note "如果您要为一个大型的组织维护集控，手动编辑集控配置会非常麻烦。在这种情况下，建议您使用集控服务器。"
+::: note
+如果您要为一个大型的组织维护集控，手动编辑集控配置会非常麻烦。在这种情况下，建议您使用集控服务器。
+:::
 
 每当你看见👉️符号，就说明你应该做一些事情。而其余的只供您参考和更深入的理解。
 
-!!! tip "在这个教程中，我们将使用 GitHub 作为示例，并使用[GitHub Codespaces](https://github.dev)在线编辑这些配置文件。如果您要使用其它的平台，请自行替换文中与 GitHub 有关的操作。"
+::: tip
+在这个教程中，我们将使用 GitHub 作为示例，并使用[GitHub Codespaces](https://github.dev)在线编辑这些配置文件。如果您要使用其它的平台，请自行替换文中与 GitHub 有关的操作。
+:::
 
-!!! tip "如果在您的网络环境下无法正常连接 GitHub，请考虑使用 GitHub 的替代品（如[Gitee](https://gitee.com/)）完成本教程。"
+::: tip
+如果在您的网络环境下无法正常连接 GitHub，请考虑使用 GitHub 的替代品（如[Gitee](https://gitee.com/)）完成本教程。
+:::
 
 ## 在开始之前
 
@@ -26,7 +32,9 @@
 
 ![1715485878305](image/tutorial-create-management-config/1715485878305.png)
 
-!!! note "为了方便，我们在这里统一将仓库命名为`classisland-mgmt-cfg`，您也可以给仓库起一个您喜欢的名字。"
+::: note
+为了方便，我们在这里统一将仓库命名为`classisland-mgmt-cfg`，您也可以给仓库起一个您喜欢的名字。
+:::
 
 为了在创建仓库时一起将仓库初始化，我们在这里勾选【Add a README file】，让 GitHub 在创建仓库时创建 README 文件，并初始化仓库。
 
@@ -59,7 +67,9 @@
 
 这就是一个最基础的清单文件了。这个文件说明了服务器类型是静态托管的，并且说明了组织名称。我们之后会根据需要逐渐完善这个文件。
 
-!!! tip "您可以试着根据[集控配置文档](configure.md#mgmt-manifest)中的说明修改`OrganizationName`字段，设置自定义的组织名。"
+::: tip
+您可以试着根据[集控配置文档](configure.md#mgmt-manifest)中的说明修改`OrganizationName`字段，设置自定义的组织名。
+:::
 
 **👉️在编辑器【Git】工具窗口中提交更改。**
 
@@ -89,7 +99,9 @@
 
 ![1715487543978](image/tutorial-create-management-config/1715487543978.png)
 
-!!! tip "如果您先前已经完成欢迎向导，您可以[根据此处的文档](connect-to-mgmt-server.md)来加入集控。"
+::: tip
+如果您先前已经完成欢迎向导，您可以[根据此处的文档](connect-to-mgmt-server.md)来加入集控。
+:::
 
 此时会弹出集控加入界面，并自动加载了我们刚刚放置在应用目录下的`ManagementPreset.json`文件。您可以点击【浏览】按钮选择其它的配置文件。
 
@@ -156,7 +168,9 @@ ID 在此处可以标识 ClassIsland 实例。在后续的实际应用中，您�
 
 在我们刚刚添加的内容中，包含了 3 个 url，以及对应 url 的版本。这些 url 分别指向我们存储到 GitHub 仓库上的科目、时间表和课表信息。这些字段被称为[`ReVersionString`](configure.md#reversionstring)，可以存储 url 和对应 url 的版本。在 ClassIsland 拉取清单时，只有在检测到 url 版本比本地存储的版本更新时，才会更新相关数据。
 
-!!! warning "在修改这些字段的 url，或者这些字段的 url 指向的内容时，请务必记得增加版本数，否则 ClassIsland 实例可能不会更新这些数据。"
+::: warning
+在修改这些字段的 url，或者这些字段的 url 指向的内容时，请务必记得增加版本数，否则 ClassIsland 实例可能不会更新这些数据。
+:::
 
 **👉️在编辑器【Git】工具窗口中提交更改。**
 

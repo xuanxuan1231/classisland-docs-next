@@ -2,16 +2,18 @@
 
 本文主要讲述如何注册提醒提供方、添加提醒设置界面和发送提醒。
 
-!!! info
-    这篇文章主要讲述如何开发提醒。如果您只是要调整提醒设置的普通用户，请参考[这篇文章](../app/notifications.md)。
+:::info
+这篇文章主要讲述如何开发提醒。如果您只是要调整提醒设置的普通用户，请参考[这篇文章](../../app/notifications.md)。
+:::
 
 <!-- ??? note "演示视频"
     <video src="../image/index/1724501396690.mp4" muted controls loop></video> -->
 
 提醒是 ClassIsland 中用于展示重要信息的功能，可以通过全屏特效、语音、音效等方式增强提醒效果。提醒由提醒提供方发出，由提醒主机管理提醒和提醒提供方，最终由主界面展示。
 
-!!! example
-    注册提醒提供方的完整示例代码可以在[示例插件仓库](https://github.com/ClassIsland/ExamplePlugins/tree/master/PluginWithNotificationProviders)上查看。
+::: info 示例
+注册提醒提供方的完整示例代码可以在[示例插件仓库](https://github.com/ClassIsland/ExamplePlugins/tree/master/PluginWithNotificationProviders)上查看。
+:::
 
 ## 注册提醒提供方
 
@@ -77,7 +79,7 @@ public class MyNotificationProvider : INotificationProvider, IHostedService
 
 在上面的代码中，高亮的部分属于这个提醒提供方的构造函数。我们在构造函数的参数中获取了提醒主机服务，然后把提醒主机服务保存到一个名为`NotificationHostService`的只读属性中备用。接着我们调用了提醒主机服务的`RegisterNotificationProvider`方法，将这个提醒提供方注册到了提醒主机上。
 
-接着我们还需要在[插件初始化方法](./plugins/plugin-base.md#初始化方法)，或应用主机配置方法中添加以下代码，将这个提醒提供方注册到应用主机上。
+接着我们还需要在[插件初始化方法](../plugins/plugin-base.md#初始化方法)，或应用主机配置方法中添加以下代码，将这个提醒提供方注册到应用主机上。
 
 ```csharp
 services.AddHostedService<MyNotificationProvider>();
@@ -318,49 +320,52 @@ public class MyNotificationProvider : INotificationProvider, IHostedService
 
 接着我们需要创建提醒设置界面，以调整要自定义显示的文本。添加以下代码：
 
-=== ":octicons-file-code-16: `Controls/NotificationProviders/MyNotificationProviderSettingsControl.xaml`"
+:::tabs
+@tab <HopeIcon icon="code"/> `Controls/NotificationProviders/MyNotificationProviderSettingsControl.xaml`
 
-    ``` xml
-    <UserControl x:Class="PluginWithNotificationProviders.Controls.NotificationProviders.MyNotificationProviderSettingsControl"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:PluginWithNotificationProviders.Controls.NotificationProviders"
-             mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300">
-        <StackPanel DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=local:MyNotificationProviderSettingsControl}}">
-            <TextBox Text="{Binding Settings.Message}"/>
-        </StackPanel>
-    </UserControl>
+``` xml
+<UserControl x:Class="PluginWithNotificationProviders.Controls.NotificationProviders.MyNotificationProviderSettingsControl"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:local="clr-namespace:PluginWithNotificationProviders.Controls.NotificationProviders"
+            mc:Ignorable="d"
+            d:DesignHeight="300" d:DesignWidth="300">
+    <StackPanel DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=local:MyNotificationProviderSettingsControl}}">
+        <TextBox Text="{Binding Settings.Message}"/>
+    </StackPanel>
+</UserControl>
 
-    ```
+```
 
-=== ":octicons-file-code-16: `Controls/NotificationProviders/MyNotificationProviderSettingsControl.xaml.cs`"
+@tabs <HopeIcon icon="code"/> `Controls/NotificationProviders/MyNotificationProviderSettingsControl.xaml.cs`
 
-    ``` csharp
-    using System.Windows.Controls;
-    using PluginWithNotificationProviders.Models;
+``` csharp
+using System.Windows.Controls;
+using PluginWithNotificationProviders.Models;
 
-    namespace PluginWithNotificationProviders.Controls.NotificationProviders;
+namespace PluginWithNotificationProviders.Controls.NotificationProviders;
 
-    public partial class MyNotificationProviderSettingsControl : UserControl
+public partial class MyNotificationProviderSettingsControl : UserControl
+{
+    /// <summary>
+    /// 这个属性用来存储提醒提供方设置
+    /// </summary>
+    public MyNotificationSettings Settings { get; }
+    
+    // 这里通过构造函数参数传入设置对象，这样设置控件就可以访问到提醒提供方的设置了。
+    public MyNotificationProviderSettingsControl(MyNotificationSettings settings)
     {
-        /// <summary>
-        /// 这个属性用来存储提醒提供方设置
-        /// </summary>
-        public MyNotificationSettings Settings { get; }
+        // 将设置对象写入到属性中，这样前端就可以访问到这个设置对象，以进行绑定。
+        Settings = settings;
         
-        // 这里通过构造函数参数传入设置对象，这样设置控件就可以访问到提醒提供方的设置了。
-        public MyNotificationProviderSettingsControl(MyNotificationSettings settings)
-        {
-            // 将设置对象写入到属性中，这样前端就可以访问到这个设置对象，以进行绑定。
-            Settings = settings;
-            
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
-    ```
+}
+```
+:::
+
 
 然后我们还需要将我们的提醒提供方中的`SettingsControl`属性设置为我们刚刚的控件，这样在提醒设置中，我们的提醒提供方的设置界面就会显示我们刚刚定义的提醒设置控件。添加如下高亮代码：
 
@@ -399,8 +404,9 @@ public class MyNotificationProvider : INotificationProvider, IHostedService
 
 要让显示的提醒支持语音播报，需要在提醒请求手动设置`MaskSpeechContent`和`OverlayOverlaySpeechContent`属性。这两个属性分别设定了在显示遮罩时和显示正文时语音播报的文本。您可以将这两个属性直接设置为提醒上显示的文本，也可以设置为提醒内容的总结。
 
-!!! warning
-    在提醒显示结束后，没有朗读完的内容将被截断，请注意控制朗读内容时长。
+::: warning
+在提醒显示结束后，没有朗读完的内容将被截断，请注意控制朗读内容时长。
+:::
 
 修改提醒提供方的下课事件处理程序，在提醒请求中添加下方高亮代码：
 

@@ -109,60 +109,62 @@ public partial class ExampleSettingsPage : SettingsPageBase
 
 编写完设置界面之后，还需要在初始化方法中把设置页面注册到应用上。
 
-=== "在插件中注册"
+:::tabs
+@tab 在插件中注册
 
-    在插件的入口点添加以下高亮代码：
+在插件的入口点添加以下高亮代码：
 
-    ```cs title="Plugin.cs" hl_lines="11"
-    // ...
-    namespace PluginWithSettingsPage;
+```cs title="Plugin.cs" hl_lines="11"
+// ...
+namespace PluginWithSettingsPage;
 
-    [PluginEntrance]
-    public class Plugin : PluginBase
+[PluginEntrance]
+public class Plugin : PluginBase
+{
+    public Settings Settings { get; set; } = new();
+
+    public override void Initialize(HostBuilderContext context, IServiceCollection services)
     {
-        public Settings Settings { get; set; } = new();
-
-        public override void Initialize(HostBuilderContext context, IServiceCollection services)
-        {
-            services.AddSettingsPage<ExampleSettingsPage>();
-        }
-
-        public override void OnShutdown()
-        {
-        }
+        services.AddSettingsPage<ExampleSettingsPage>();
     }
-    ```
 
-    上面高亮的代码利用 `AddSettingsPage` 扩展方法将设置页面注册到了应用主机上。
+    public override void OnShutdown()
+    {
+    }
+}
+```
 
-=== "在应用中注册"
+上面高亮的代码利用 `AddSettingsPage` 扩展方法将设置页面注册到了应用主机上。
 
-    在应用的初始化方法中添加以下高亮代码：
+@tab 在应用中注册
 
-    ```cs title="App.xaml.cs" hl_lines="15"
+在应用的初始化方法中添加以下高亮代码：
+
+```cs title="App.xaml.cs" hl_lines="15"
+// ...
+namespace ClassIsland;
+
+class App : AppBase {
     // ...
-    namespace ClassIsland;
-    
-    class App : AppBase {
+    private void App_OnDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
+    {
         // ...
-        private void App_OnDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
+        IAppHost.Host = Microsoft.Extensions.Hosting.Host.
+        CreateDefaultBuilder().
+        UseContentRoot(AppContext.BaseDirectory).
+        ConfigureServices((context, services) =>
         {
             // ...
-            IAppHost.Host = Microsoft.Extensions.Hosting.Host.
-            CreateDefaultBuilder().
-            UseContentRoot(AppContext.BaseDirectory).
-            ConfigureServices((context, services) =>
-            {
-                // ...
-                services.AddSettingsPage<ExampleSettingsPage>();
-                // ...
-            }
-            );
+            services.AddSettingsPage<ExampleSettingsPage>();
             // ...
         }
+        );
         // ...
-    }  
-    ```
+    }
+    // ...
+}  
+```
+:::
 
 注册完成后，打开【应用设置】，您可以在设置界面的导航栏中看到您注册的设置页面。
 

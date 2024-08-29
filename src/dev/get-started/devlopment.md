@@ -18,25 +18,29 @@
 
 要克隆仓库，您可以直接在 Visual Studio 中克隆，也可以通过命令行克隆。
 
-=== "HTTP"
+::: tabs#clonemethod
+@tab HTTP
 
-    ```shell
-    git clone https://github.com/ClassIsland/ClassIsland.git
-    ```
+```shell
+git clone https://github.com/ClassIsland/ClassIsland.git
+```
 
-=== "SSH"
+@tab SSH
 
-    ```shell
-    git clone git@github.com:ClassIsland/ClassIsland.git
-    ```
+```shell
+git clone git@github.com:ClassIsland/ClassIsland.git
+```
 
-=== "GitHub CLI"
+@tab GitHub CLI
 
-    ```shell
-    gh repo clone ClassIsland/ClassIsland
-    ```
+```shell
+gh repo clone ClassIsland/ClassIsland
+```
+:::
 
-!!! warning "仓库名仅供参考，具体的仓库名请以您的 Fork 为准。"
+::: warning
+仓库名仅供参考，具体的仓库名请以您的 Fork 为准。
+:::
 
 ## 编译与运行
 

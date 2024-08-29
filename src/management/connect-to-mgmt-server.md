@@ -20,7 +20,9 @@ ClassIsland 从[集控配置文件](configure.md#mgmt-configure)加载集控的�
 
 ![image](https://github.com/HelloWRC/ClassIsland/assets/55006226/6e0f2c6d-5bff-4677-bf3a-caa4319a990e)
 
-!!! tip "将集控配置后重命名为`ManagementPreset.json`，并放置于应用目录下，即可在加入集控时自动选择并加载集控配置文件。"
+::: tip
+将集控配置后重命名为`ManagementPreset.json`，并放置于应用目录下，即可在加入集控时自动选择并加载集控配置文件。
+:::
 
 <a id="exit"></a>
 
@@ -30,4 +32,6 @@ ClassIsland 从[集控配置文件](configure.md#mgmt-configure)加载集控的�
 
 ![image](https://github.com/HelloWRC/ClassIsland/assets/55006226/b354b1fa-7347-4204-9546-effe0045c56e)
 
-!!! note "如果要禁用集控退出功能，可以在集控策略中将`AllowExitManagement`设置为`false`。[详细信息](policy.md#allowexitmanagement)"
+::: note
+如果要禁用集控退出功能，可以在集控策略中将`AllowExitManagement`设置为`false`。[详细信息](policy.md#allowexitmanagement)
+:::

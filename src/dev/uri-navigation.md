@@ -1,7 +1,8 @@
 # 开发 Uri 导航
 
-!!! info
-    本文章主要讲述开发人员如何注册自定义的 Uri 导航。如果您想了解应用内置的 Uri 导航路径，请参阅[Uri 导航](../app/uri-navigation.md)。
+::: info
+本文章主要讲述开发人员如何注册自定义的 Uri 导航。如果您想了解应用内置的 Uri 导航路径，请参阅[Uri 导航](../app/uri-navigation.md)。
+:::
 
 ClassIsland 支持通过 Uri 进行应用内导航，同时也支持注册系统 Url 协议，从应用外部打开特定的 Uri。
 
@@ -13,8 +14,9 @@ ClassIsland 的 Uri 导航协议是 `classisland://`。
 
 要注册导航，您首先需要获取服务 `ClassIsland.Core.Abstractions.Services.IUriNavigationService`。获取服务的详细方法见[基础知识](basics.md#dependency-injection)。
 
-!!! info
-    在本文的代码中，我们假定将获取到的服务存储在了属性 `UriNavigationService` 中。
+::: info
+在本文的代码中，我们假定将获取到的服务存储在了属性 `UriNavigationService` 中。
+:::
 
 接下来我们注册路径 `foo/bar` 的处理程序：
 
@@ -31,8 +33,9 @@ UriNavigationService.HandlePluginsNavigation(
 
 使用 `HandlePluginsNavigation` 方法注册的 Uri 的主机是 `plugins`，也就是专门为插件预留的导航主机。如果要注册到 `app` 或其他主机下，请使用 `HandleAppNavigation` 方法。
 
-!!! note
-    `HandleAppNavigation`等方法具有 `internal` 保护，只有从 ClassIsland 内部才能注册到 `app` 和自定义主机下。插件中只能使用 `HandlePluginsNavigation` 方法注册到 `plugins` 主机下。
+::: note
+`HandleAppNavigation`等方法具有 `internal` 保护，只有从 ClassIsland 内部才能注册到 `app` 和自定义主机下。插件中只能使用 `HandlePluginsNavigation` 方法注册到 `plugins` 主机下。
+:::
 
 ## 导航
 
@@ -45,8 +48,9 @@ flowchart LR
     IsRoot --> |"否"| IsExist
 ```
 
-!!! example "举个栗子"
-    假设我们注册到了路径 `hello_world/hello_world`。当向 `hello_world/hello_world/foo_bar` 导航时，由于这个路径还未被注册，会导航到上一级 `hello_world/hello_world`，并触发对应的事件处理程序。
+::: info 举个栗子
+假设我们注册到了路径 `hello_world/hello_world`。当向 `hello_world/hello_world/foo_bar` 导航时，由于这个路径还未被注册，会导航到上一级 `hello_world/hello_world`，并触发对应的事件处理程序。
+:::
 
 以下有几种进行导航的方式：
 

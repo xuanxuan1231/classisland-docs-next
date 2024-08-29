@@ -1,7 +1,8 @@
 # Uri 导航
 
-!!! info
-    本文章主要讲述用户如何使用 Uri 导航。如果您想了解在 ClassIsland 注册自定义 Uri 的方法，请参阅[开发 Uri 导航](../dev/uri-navigation.md)。
+::: info
+本文章主要讲述用户如何使用 Uri 导航。如果您想了解在 ClassIsland 注册自定义 Uri 的方法，请参阅[开发 Uri 导航](../dev/uri-navigation.md)。
+:::
 
 ClassIsland 支持在应用内通过 Uri 进行导航，同时也在系统注册 Url 协议，从外部调用 ClassIsland 的各项功能。
 
@@ -13,8 +14,9 @@ ClassIsland 默认的 Uri 导航协议是 `classisland://`。应用内置的导�
 
 ![1721609023773](image/uri-navigation/1721609023773.png)
 
-!!! warning
-    在有些情况下，部分杀毒软件可能会将【注册 Url 协议】视为敏感行为进行拦截。如果在开启此功能时出现这种情况，请点击【允许】。
+::: warning
+在有些情况下，部分杀毒软件可能会将【注册 Url 协议】视为敏感行为进行拦截。如果在开启此功能时出现这种情况，请点击【允许】。
+:::
 
 注册完成后，您可以通过在【运行】中调用[`classisland://app/test`](classisland://app/test)来测试注册是否成功。
 
@@ -70,8 +72,9 @@ classisland://app/class-swap
 
 打开换课窗口。
 
-!!! note
-    在当前没有加载课表时，此 Uri 不起作用。
+::: note
+在当前没有加载课表时，此 Uri 不起作用。
+:::
 
 ### 测试导航
 

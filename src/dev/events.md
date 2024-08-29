@@ -6,34 +6,36 @@
 
 ## 生命周期
 
-??? abstract "生命周期事件示意图"
+:::details 生命周期事件示意图
 
-    以下是 ClassIsland 的生命周期及事件触发的示意图：
+以下是 ClassIsland 的生命周期及事件触发的示意图：
 
-    ```mermaid
-    flowchart TD
-        Startup(["应用启动"]) 
-        --> ConfigureHost["配置通用主机"] 
-        --> HostStartup["主机启动"]
-        --> LaunchMainLoop["启动主循环"]
-        --> AppStarted{{"AppStarted"}}
-        --> PreMainTimerTick{{"PreMainTimerTick"}}
-        --> ProcessLessons["处理课表"]
-        --> PostMainTimerTick{{"PostMainTimerTick"}}
-        --> PreMainTimerTick
+```mermaid
+flowchart TD
+    Startup(["应用启动"])
+    --> ConfigureHost["配置通用主机"]
+    --> HostStartup["主机启动"]
+    --> LaunchMainLoop["启动主循环"]
+    --> AppStarted{{"AppStarted"}}
+    --> PreMainTimerTick{{"PreMainTimerTick"}}
+    --> ProcessLessons["处理课表"]
+    --> PostMainTimerTick{{"PostMainTimerTick"}}
+    --> PreMainTimerTick
 
-        PostMainTimerTick 
-        --> Exiting["应用正在退出"]
-        --> AppStopping{{"AppStopping"}}
-    ```
+    PostMainTimerTick
+    --> Exiting["应用正在退出"]
+    --> AppStopping{{"AppStopping"}}
+```
 
-[TOC]
+:::
+
+[[TOC]]
 
 ## 应用生命周期事件
 
 这些事件会在应用生命周期发生改变时触发。要订阅这些事件，需要通过以下代码获取当前应用的实例：
 
-``` csharp
+```csharp
 var app = AppBase.Current;
 
 // 注册应用启动完成事件
@@ -46,18 +48,19 @@ app.AppStarted += (o, e) => Console.WriteLine("AppStarted");
 
 **事件名：** `AppStarted`
 
-**参数：** *无*
+**参数：** _无_
 
 ### 应用正在停止 `AppStopping`
 
 在应用正在退出时触发。
 
-!!! warning
-    不要在此事件的事件处理器上进行异步操作。
+::: warning
+不要在此事件的事件处理器上进行异步操作。
+:::
 
 **事件名：** `AppStopping`
 
-**参数：** *无*
+**参数：** _无_
 
 ## 主计时器事件
 
@@ -71,7 +74,7 @@ app.AppStarted += (o, e) => Console.WriteLine("AppStarted");
 
 **事件名：** `PreMainTimerTicked`
 
-**参数：** *无*
+**参数：** _无_
 
 ### 课表处理后事件
 
@@ -81,7 +84,7 @@ app.AppStarted += (o, e) => Console.WriteLine("AppStarted");
 
 **事件名：** `PostMainTimerTick`
 
-**参数：** *无*
+**参数：** _无_
 
 ## 课表事件
 
@@ -95,7 +98,7 @@ app.AppStarted += (o, e) => Console.WriteLine("AppStarted");
 
 **事件名：** `OnClass`
 
-**参数：** *无*
+**参数：** _无_
 
 ### 下课事件
 
@@ -105,7 +108,7 @@ app.AppStarted += (o, e) => Console.WriteLine("AppStarted");
 
 **事件名：** `OnBreakingTime`
 
-**参数：** *无*
+**参数：** _无_
 
 ### 放学事件
 
@@ -115,7 +118,7 @@ app.AppStarted += (o, e) => Console.WriteLine("AppStarted");
 
 **事件名：** `OnAfterSchool`
 
-**参数：** *无*
+**参数：** _无_
 
 ### 时间状态改变事件
 
@@ -125,4 +128,4 @@ app.AppStarted += (o, e) => Console.WriteLine("AppStarted");
 
 **事件名：** `CurrentTimeStateChanged`
 
-**参数：** *无*
+**参数：** _无_

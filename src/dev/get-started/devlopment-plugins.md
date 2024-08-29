@@ -1,6 +1,8 @@
 # 配置 ClassIsland **插件**开发环境
 
-!!! warning "本文档待补充。"
+::: warning
+本文档待补充。
+:::
 
 ## 开发环境
 
@@ -18,28 +20,31 @@
 
 开发插件的过程中需要使用 ClassIsland 源码以构建 ClassIsland 本体的可执行文件，以用于运行和调试插件。
 
-??? note "为什么不使用 Releases 中发布的可执行文件"
-    Release 版本的构建无法使用热重载（包括 XAML 热重载）功能，调试起来很麻烦。
+::: note 为什么不使用 Releases 中发布的可执行文件
+Release 版本的构建无法使用热重载（包括 XAML 热重载）功能，调试起来很麻烦。
+:::
 
 以下是克隆仓库的命令行：
 
-=== "HTTP"
+::: tabs#clonemethod
+@tab HTTP
 
-    ```shell
-    git clone https://github.com/ClassIsland/ClassIsland.git
-    ```
+```shell
+git clone https://github.com/ClassIsland/ClassIsland.git
+```
 
-=== "SSH"
+@tab SSH
 
-    ```shell
-    git clone git@github.com:ClassIsland/ClassIsland.git
-    ```
+```shell
+git clone git@github.com:ClassIsland/ClassIsland.git
+```
 
-=== "GitHub CLI"
+@tab GitHub CLI
 
-    ```shell
-    gh repo clone ClassIsland/ClassIsland
-    ```
+```shell
+gh repo clone ClassIsland/ClassIsland
+```
+:::
 
 克隆完成后，运行以下命令进入 ClassIsland 源代码目录。
 

@@ -6,8 +6,9 @@
 
 默认情况下，不同的插件会被加载到不同的程序集加载上下文（[AssemblyLoadContext](https://learn.microsoft.com/zh-cn/dotnet/core/dependency-loading/understanding-assemblyloadcontext)）中。因此，不同插件间可以引入相同依赖库的不同版本，而不会产生冲突。
 
-!!! warning
-    由于这个特性，当两个插件间包含具有相同名称的类型定义时，它们不是同一类型。当且仅当它们来自同一个 Assembly 实例时，它们的类型相同。详细请见[此文章](https://learn.microsoft.com/zh-cn/dotnet/core/dependency-loading/understanding-assemblyloadcontext#type-conversion-issues)。
+::: warning
+由于这个特性，当两个插件间包含具有相同名称的类型定义时，它们不是同一类型。当且仅当它们来自同一个 Assembly 实例时，它们的类型相同。详细请见[此文章](https://learn.microsoft.com/zh-cn/dotnet/core/dependency-loading/understanding-assemblyloadcontext#type-conversion-issues)。
+:::
 
 ## 资源引用
 
@@ -101,5 +102,6 @@ public class Plugin : PluginBase
 
 上面的的示例代码在[插件入口类](./plugin-base.md)的[初始化方法](./plugin-base.md#初始化方法)中获取了插件配置目录，然后读取插件配置，并订阅了配置对象的`PropertyChanged`属性，以在配置属性更改时保存配置文件。
 
-!!! warning
-    **不要**将配置文件保存在插件安装目录下，保存在插件安装目录下的配置文件不会被自动备份，并且可能会在插件更新时被删除。
+:::warning
+**不要**将配置文件保存在插件安装目录下，保存在插件安装目录下的配置文件不会被自动备份，并且可能会在插件更新时被删除。
+:::

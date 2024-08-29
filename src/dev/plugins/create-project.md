@@ -2,8 +2,9 @@
 
 本文章将介绍如何创建、调试并运行 ClassIsland 的插件项目。
 
-!!! warning
-    本文章所涉及内容仍在开发中，随时可能发生变动。请注意关注文档更变。
+::: warning
+本文章所涉及内容仍在开发中，随时可能发生变动。请注意关注文档更变。
+:::
 
 在开始之前，您需要按照[设置 ClassIsland 插件开发环境](../get-started/devlopment-plugins.md)的指引设置插件开发环境。
 
@@ -11,7 +12,8 @@
 
 您可以使用项目模板快速开始开发。
 
-!!! info "待补充。"
+::: info 待补充。
+:::
 
 ## 手动创建项目
 
@@ -26,12 +28,13 @@
 
     ![1721876680236](image/create-project/1721876680236.png)
 
-    ??? info "使用预览版 SDK"
-        您可以通过添加 GitHub Packages 源来获取从 GitHub Actions 构建的最新的 SDK 包。您需要按照[此文章](https://docs.github.com/zh/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)的方法创建 GitHub 个人访问令牌（classic），并至少赋予 `read:packages` 权限。然后使用以下命令添加 ClassIsland 的 GitHub Packages Nuget 源：
+    ::: info 使用预览版 SDK
+    您可以通过添加 GitHub Packages 源来获取从 GitHub Actions 构建的最新的 SDK 包。您需要按照[此文章](https://docs.github.com/zh/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)的方法创建 GitHub 个人访问令牌（classic），并至少赋予 `read:packages` 权限。然后使用以下命令添加 ClassIsland 的 GitHub Packages Nuget 源：
 
-        ``` shell
-        dotnet nuget add source --username（你的用户名） --password（你的 GitHub 个人访问令牌） --store-password-in-clear-text --name github "https://nuget.pkg.github.com/ClassIsland/index.json"
-        ```
+    ``` shell
+    dotnet nuget add source --username（你的用户名） --password（你的 GitHub 个人访问令牌） --store-password-in-clear-text --name github "https://nuget.pkg.github.com/ClassIsland/index.json"
+    ```
+    :::
 
 4. 打开项目文件，添加 `EnableDynamicLoading` 属性以允许插件被动态加载，并在 `ClassIsland.PluginSdk` 的引用项上设置`ExcludeAssets` 属性为 `runtime` 以阻止插件 SDK 相关依赖项流入构建结果。
 
@@ -131,8 +134,9 @@ public class Plugin : PluginBase
 }
 ```
 
-!!! tip
-    您还可以在 `Initialize` 中完成相关服务的注册，详细信息请见[此文章](./basics.md#依赖注入)。
+::: tip
+您还可以在 `Initialize` 中完成相关服务的注册，详细信息请见[此文章](./basics.md#依赖注入)。
+:::
 
 关于插件入口类的详细用法，可以参考文档[插件入口类](./plugin-base.md)。
 
@@ -151,8 +155,9 @@ using System.Windows;
 )]
 ```
 
-!!! note
-    关于此属性的详细用法，请见[文档](https://learn.microsoft.com/zh-cn/dotnet/api/system.windows.themeinfoattribute?view=windowsdesktop-8.0)。
+::: note
+关于此属性的详细用法，请见[文档](https://learn.microsoft.com/zh-cn/dotnet/api/system.windows.themeinfoattribute?view=windowsdesktop-8.0)。
+:::
 
 创建 `Themes/Generic.xaml`，并写入以下内容，引用主题资源字典：
 
@@ -169,47 +174,45 @@ using System.Windows;
 
 需要以 ClassIsland 本体为载体以运行和调试插件。
 
-=== "Visual Studio"
 
-    1. 进入【调试】->【（项目名）调试属性】，打开【启动配置文件】窗口。
+:::tabs
+@tab Visual Studio
 
-        ![1721876856393](image/create-project/1721876856393.png)
+1. 进入【调试】->【（项目名）调试属性】，打开【启动配置文件】窗口。
+![1721876856393](image/create-project/1721876856393.png)
+2. 新建【可执行文件】启动项目。
+![1721876883260](image/create-project/1721876883260.png)
+3. 在【可执行文件】一栏中填写在[配置插件开发环境](../get-started/devlopment-plugins.md#克隆并构建-classisland)中构建的 ClassIsland 可执行文件路径
+4. 将【工作目录】一栏设置为 ClassIsland 可执行文件路径的文件夹。
+5. 在【命令行参数】一栏填入以下命令行参数，让 ClassIsland 启动时从当前插件的输出目录中加载插件：
+```plaintext
+-epp（你当前插件项目的输出目录，如 E:\Coding\ExamplePlugins\HelloWorldPlugin\bin\Debug\net8.0-windows）
+```
 
-    2. 新建【可执行文件】启动项目。
+![1721876903698](image/create-project/1721876903698.png)
 
-        ![1721876883260](image/create-project/1721876883260.png)
+@tab 手动编辑 `launchSettings.json`
 
-    3. 在【可执行文件】一栏中填写在[配置插件开发环境](../get-started/devlopment-plugins.md#克隆并构建-classisland)中构建的 ClassIsland 可执行文件路径
-    4. 将【工作目录】一栏设置为 ClassIsland 可执行文件路径的文件夹。
-    5. 在【命令行参数】一栏填入以下命令行参数，让 ClassIsland 启动时从当前插件的输出目录中加载插件：
+向 `launchSettings.json` 中添加下述内容：
 
-        ```plaintext
-        -epp（你当前插件项目的输出目录，如 E:\Coding\ExamplePlugins\HelloWorldPlugin\bin\Debug\net8.0-windows）
-        ```
-
-        ![1721876903698](image/create-project/1721876903698.png)
-
-=== "手动编辑 `launchSettings.json`"
-
-    向 `launchSettings.json` 中添加下述内容：
-
-    ``` json title="launchSettings.json" hl_lines="4-9"
-    {
-        "profiles": {
-            // ...
-            "配置文件 1": {
-                "commandName": "Executable",
-                "executablePath": "...",  // (1)
-                "commandLineArgs": "-epp ...",  // (2)
-                "workingDirectory": "..."  // (3)
-            }
+```json {4-9} title="launchSettings.json"
+{
+    "profiles": {
+        // ...
+        "配置文件 1": {
+            "commandName": "Executable",
+            "executablePath": "...",  // (1)
+            "commandLineArgs": "-epp ...",  // (2)
+            "workingDirectory": "..."  // (3)
         }
     }
-    ```
+}
+```
 
-    1. 将这里替换为在[配置插件开发环境](../get-started/devlopment-plugins.md#克隆并构建-classisland)中构建的 ClassIsland 可执行文件路径。
-    2. 将参数替换为你当前插件项目的输出目录，如 `E:\\Coding\\ExamplePlugins\\HelloWorldPlugin\\bin\\Debug\\net8.0-windows`
-    3. 将这里替换为[配置插件开发环境](../get-started/devlopment-plugins.md#克隆并构建-classisland)中构建的 ClassIsland 可执行文件路径的文件夹。
+1. 将这里替换为在[配置插件开发环境](../get-started/devlopment-plugins.md#克隆并构建-classisland)中构建的 ClassIsland 可执行文件路径。
+2. 将参数替换为你当前插件项目的输出目录，如 `E:\\Coding\\ExamplePlugins\\HelloWorldPlugin\\bin\\Debug\\net8.0-windows`
+3. 将这里替换为[配置插件开发环境](../get-started/devlopment-plugins.md#克隆并构建-classisland)中构建的 ClassIsland 可执行文件路径的文件夹。
+:::
 
 以上配置步骤完成后，关闭【启动配置文件】窗口，然后切换到刚刚添加的启动配置文件，启动调试。如果没有差错，您可以看到 ClassIsland 正常启动，并弹出了由插件显示的提示框。
 

@@ -64,8 +64,9 @@ public class Plugin : PluginBase
 }
 ```
 
-!!! note
-    有些注册操作需要在主机启动后进行，由于初始化方法在主机启动前执行，所以可以通过订阅[`AppBase.AppStarted`](../events.md#应用启动完成-appstarted)事件，在应用启动完成后进行注册。
+::: note
+有些注册操作需要在主机启动后进行，由于初始化方法在主机启动前执行，所以可以通过订阅[`AppBase.AppStarted`](../events.md#应用启动完成-appstarted)事件，在应用启动完成后进行注册。
+:::
 
 ## 获取插件信息
 
