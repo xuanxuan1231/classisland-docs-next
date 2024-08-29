@@ -27,7 +27,7 @@ jobs:
       run: pnpm install
 
     - name: Install Google Chrome
-      uses: browser-actions/setup-chrome@v1
+      run: npx puppeteer browsers install chrome
 
     - name: Generate PDF
       run: pnpm run export-pdf
