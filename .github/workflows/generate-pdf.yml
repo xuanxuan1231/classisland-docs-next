@@ -1,0 +1,32 @@
+name: Generate and Upload PDF on Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+
+    - name: Install dependencies
+      run: pnpm install
+
+    - name: Install Google Chrome
+      uses: browser-actions/setup-chrome@v1
+
+    - name: Generate PDF
+      run: pnpm run export-pdf
+
+    - name: Upload PDF to Release
+      uses: softprops/action-gh-release@v2
+      with:
+        files: ./pdf/ClassIsland-Docs.pdf
