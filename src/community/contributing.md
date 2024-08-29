@@ -4,7 +4,7 @@
 本文章是面向 _**ClassIsland 文档**_ 贡献者的贡献指南。如果您要为 **ClassIsland 本体** 做出贡献，请参阅 [ClassIsland 贡献指南](https://github.com/ClassIsland/ClassIsland/blob/master/CONTRIBUTING.md)。
 :::
 
-<img src="/image/contributing/Firefly_Sticker_01.png"
+<img src="image/contributing/Firefly_Sticker_01.png"
     width="85"
     alt="流萤 - 比心"/>
 
