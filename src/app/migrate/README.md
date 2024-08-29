@@ -1,3 +1,7 @@
+---
+author: Hello8693
+---
+
 # 迁移课表
 
 ClassIsland 提供一个转换配置文件用的在线工具，可以方便地将其他课程表软件的课表配置转换为 ClassIsland 档案文件。

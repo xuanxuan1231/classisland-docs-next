@@ -1,3 +1,7 @@
+---
+author: Hello8693
+---
+
 # 从 Electron Class Schedule 迁移
 
 ## 你需要准备
