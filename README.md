@@ -1,37 +1,31 @@
 # ClassIsland 文档
 
-这是 [ClassIsland](https://github.com/HelloWRC/ClassIsland) 文档仓库。本文档基于 [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) 搭建，目前托管在 [Read The Docs](https://app.readthedocs.org/projects/classisland-docs/) 上。
+这是 [ClassIsland](https://github.com/HelloWRC/ClassIsland) 文档仓库。本文档基于 [VuePress](https://vuejs.press/) 搭建
 
-[在线查看文档](https://docs.classisland.tech/)
+[在线查看文档](https://classisland.github.io/classisland-docs-next/)
 
 ## 开始编写文档
 
-1. 安装 [Python 3](https://www.python.org/downloads/) 环境
+1. 安装 Node 20 环境（推荐使用NVM）
 2. 克隆并进入文档仓库
-3. 设置虚拟环境 **（建议）**
+3. 安装依赖（需要使用pnpm，可使用corepack安装）
+   ```sh
+   pnpm install
+   ```
+
+4. 启动 VuePress 服务器
 
     ``` bash
-    python -m venv ./venv
-    ./venv/scripts/activate
+    pnpm run docs:dev
     ```
 
-4. 安装依赖
+启动 VuePress 服务器后，在浏览器中打开终端输出的链接（默认是[http://localhost:8080/classisland-docs-next/](http://localhost:8080/classisland-docs-next/)）即可浏览文档。当本地文档做出更改时，浏览器中的文档将自动刷新。
 
-    ``` bash
-    python -m pip install -r requirements.txt
-    ```
+本文档使用了 vuepress-plugin-md-enhance
+ 的一些扩展语法，请尽量直接编辑 Markdown 文件，而不是使用可视化 Markdown 编辑器。建议使用 [Visual Studio Code](https://code.visualstudio.com/) 编辑文档。
 
-5. 启动 MkDocs 服务器
-
-    ``` bash
-    mkdocs serve
-    ```
-
-启动 MkDocs 服务器后，在浏览器中打开终端输出的链接（默认是[http://localhost:8000/](http://localhost:8000/)）即可浏览文档。当本地文档做出更改时，浏览器中的文档将自动刷新。
-
-本文档使用了 MkDocs 的一些扩展语法，请尽量直接编辑 Markdown 文件，而不是使用可视化 Markdown 编辑器。建议使用 [Visual Studio Code](https://code.visualstudio.com/) 编辑文档。
-
-关于 MkDocs 和 Material For MkDocs 的用法，请参见 [MkDocs 文档](https://www.mkdocs.org/getting-started/) 和 [Material For MkDocs 文档](https://squidfunk.github.io/mkdocs-material/)。
+关于 VuePress 和 vuepress-plugin-md-enhance
+ 的用法，请参见 [VuePress 文档](https://vuejs.press/) 和 [vuepress-plugin-md-enhance 文档](https://plugin-md-enhance.vuejs.press/zh/)。
 
 ## 做出贡献
 
@@ -41,8 +35,8 @@
 
 感谢以下为本文档做出贡献的同学：
 
-<a href="https://github.com/ClassIsland/classisland-docs/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=ClassIsland/classisland-docs&max=1000" alt="贡献者名单"/>
+<a href="https://github.com/ClassIsland/classisland-docs-next/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ClassIsland/classisland-docs-next&max=1000" alt="贡献者名单"/>
 </a>
 
 ## 许可证
