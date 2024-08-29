@@ -34,8 +34,8 @@ ClassIsland（`class island`）是一款适用于班级多媒体屏幕的课表�
 
 <div class="grid cards" markdown>
 
-- :material-web: __[ClassIsland 官网]__ – 查看应用官网。
-- :fontawesome-brands-github: __[GitHub 项目主页]__ – 在 GitHub 上查看应用的源代码。
+- <HopeIcon icon="mdi mdi-web"/> __[ClassIsland 官网]__ – 查看应用官网。
+- <HopeIcon icon="fa-brands fa-github"/> __[GitHub 项目主页]__ – 在 GitHub 上查看应用的源代码。
 
 </div>
 
@@ -46,8 +46,8 @@ ClassIsland（`class island`）是一款适用于班级多媒体屏幕的课表�
 
 <div class="grid cards" markdown>
 
-- :octicons-video-16: __[观看入门教程视频]__ - 您可以观看本视频来了解如何安装 ClassIsland，并快速上手本软件。
-- :material-download: __[安装与开始]__ - 了解 ClassIsland 的设备需求，以及如何在您的设备上安装 ClassIsland。
+- <HopeIcon icon="mdi mdi-play-box-outline"/> __[观看入门教程视频]__ - 您可以观看本视频来了解如何安装 ClassIsland，并快速上手本软件。
+- <HopeIcon icon="mdi mdi-download"/> __[安装与开始]__ - 了解 ClassIsland 的设备需求，以及如何在您的设备上安装 ClassIsland。
 
 </div>
 
@@ -62,10 +62,10 @@ ClassIsland（`class island`）是一款适用于班级多媒体屏幕的课表�
 
 <div class="grid cards" markdown>
 
-- :material-application: __[应用帮助]__ – 了解应用的基本使用方法。
-- :material-server: __[集控]__ – 查看这部分文档包含了关于集控的帮助，以及手动编辑集控文件的教程。
-- :fontawesome-solid-code: __[开发文档]__ - 查看 ClassIsland 的技术细节，了解如何参与 ClassIsland 相关的开发。
-- :octicons-people-16: __[社区]__ - 了解如何参与 ClassIsland 社区。
+- <HopeIcon icon="mdi mdi-application"/> __[应用帮助]__ – 了解应用的基本使用方法。
+- <HopeIcon icon="mdi mdi-server"/> – 查看这部分文档包含了关于集控的帮助，以及手动编辑集控文件的教程。
+- <HopeIcon icon="fa-solid fa-code"/> __[开发文档]__ - 查看 ClassIsland 的技术细节，了解如何参与 ClassIsland 相关的开发。
+- <HopeIcon icon="mdi mdi-account-multiple"/> __[社区]__ - 了解如何参与 ClassIsland 社区。
 
 </div>
 
