@@ -96,7 +96,7 @@ export default sidebar({
     {
       text: "社区",
       children: [
-        "communities.md",
+        "README.md",
         "contributing.md",
       ],
     },
