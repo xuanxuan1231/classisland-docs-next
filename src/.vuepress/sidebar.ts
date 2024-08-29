@@ -25,6 +25,14 @@ export default sidebar({
             "subject.md",
           ],
         },
+        {
+          text: "迁移课表",
+          prefix: "migrate/",
+          children: [
+            "README.md",
+            "ecs.md",
+          ],
+        },
         "notifications.md",
         "uri-navigation.md",
         "backup.md",
