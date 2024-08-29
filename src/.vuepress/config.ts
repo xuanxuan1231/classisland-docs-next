@@ -3,7 +3,7 @@ import { defineUserConfig } from "vuepress";
 import theme from "./theme.js";
 
 export default defineUserConfig({
-  base: "/",
+  base: "/classisland-docs-next/",
 
   lang: "zh-CN",
   title: "ClassIsland文档",
