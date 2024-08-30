@@ -3,7 +3,7 @@ import { enNavbar, zhNavbar } from "./navbar/index.js";
 import { enSidebar, zhSidebar } from "./sidebar/index.js";
 
 export default hopeTheme({
-  hostname: "https://classisland.github.io",
+  hostname: "http://beta.docs.classisland.tech",
 
   author: {
     name: "ClassIsland社区",
