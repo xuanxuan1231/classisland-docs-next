@@ -1,4 +1,5 @@
 import { defineUserConfig, Plugin } from "vuepress";
+import { searchProPlugin } from "vuepress-plugin-search-pro";
 import theme from "./theme.js";
 
 export default defineUserConfig({
@@ -7,8 +8,8 @@ export default defineUserConfig({
   locales: {
     "/": {
       lang: "zh-CN",
-      title: "ClassIsland文档",
-      description: "ClassIsland的文档",
+      title: "ClassIsland 文档",
+      description: "ClassIsland 的文档",
     },
     "/en-us/": {
       lang: "en-US",
@@ -17,9 +18,13 @@ export default defineUserConfig({
     },
   },
 
-  theme,
+  plugins: [
+    searchProPlugin({
+      // 配置选项
+    }),
+  ],
 
-
+  theme
   // 和 PWA 一起启用
   // shouldPrefetch: false,
 });
