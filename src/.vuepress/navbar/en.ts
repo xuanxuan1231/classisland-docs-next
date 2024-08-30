@@ -1,6 +1,6 @@
 import { navbar } from "vuepress-theme-hope";
 
-export default navbar([
+export const enNavbar = navbar([
   "/",
   "/app/",
   "/management/",

@@ -1,22 +1,22 @@
 import { sidebar } from "vuepress-theme-hope";
 
-export default sidebar({
-  "/": [
+export const enSidebar = sidebar({
+  "/en-us/": [
     "",
     {
-      text: "首页",
+      text: "Home",
       link: "index.md",
     },
   ],
-  "/app/": [
+  "/en-us/app/": [
     {
-      text: "应用帮助",
+      text: "Application Help",
       children: [
         "index.md",
         "setup.md",
         "basic.md",
         {
-          text: "档案设置",
+          text: "Profile Settings",
           prefix: "profile/",
           children: [
             "README.md",
@@ -26,7 +26,7 @@ export default sidebar({
           ],
         },
         {
-          text: "迁移课表",
+          text: "Migrate Schedule",
           prefix: "migrate/",
           children: [
             "README.md",
@@ -38,7 +38,7 @@ export default sidebar({
         "backup.md",
         "advanced.md",
         {
-          text: "错误排除",
+          text: "Troubleshooting",
           prefix: "faq/",
           children: [
             "faq.md",
@@ -48,9 +48,9 @@ export default sidebar({
       ],
     },
   ],
-  "/management/": [
+  "/en-us/management/": [
     {
-      text: "集控",
+      text: "Central Control",
       children: [
         "README.md",
         "client-identify.md",
@@ -61,13 +61,13 @@ export default sidebar({
       ],
     },
   ],
-  "/dev/": [
+  "/en-us/dev/": [
     {
-      text: "开发文档",
+      text: "Developer Documentation",
       children: [
         "README.md",
         {
-          text: "开始",
+          text: "Getting Started",
           prefix: "get-started/",
           children: [
             "devlopment.md",
@@ -75,7 +75,7 @@ export default sidebar({
           ],
         },
         {
-          text: "插件",
+          text: "Plugins",
           prefix: "plugins/",
           children: [
             "create-project.md",
@@ -89,7 +89,7 @@ export default sidebar({
         "uri-navigation.md",
         "components.md",
         {
-          text: "提醒",
+          text: "Notifications",
           prefix: "notifications/",
           children: [
             "index.md",
@@ -100,9 +100,9 @@ export default sidebar({
       ],
     },
   ],
-  "/community/": [
+  "/en-us/community/": [
     {
-      text: "社区",
+      text: "Community",
       children: [
         "README.md",
         "contributing.md",

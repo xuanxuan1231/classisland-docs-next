@@ -1,7 +1,6 @@
 import { hopeTheme } from "vuepress-theme-hope";
-
-import navbar from "./navbar.js";
-import sidebar from "./sidebar.js";
+import { enNavbar, zhNavbar } from "./navbar/index.js";
+import { enSidebar, zhSidebar } from "./sidebar/index.js";
 
 export default hopeTheme({
   hostname: "https://classisland.github.io",
@@ -20,19 +19,46 @@ export default hopeTheme({
   docsDir: "src",
 
   // 导航栏
-  navbar,
+  // navbar,
 
-  // 侧边栏
-  sidebar,
+  // // 侧边栏
+  // sidebar,
 
-  // 页脚
-  footer: "默认页脚",
-  displayFooter: true,
+  // // 页脚
+  // footer: "Copyright (c) 2024 ClassIsland",
+  // displayFooter: true,
 
-  // 加密配置
-  encrypt: {
-    config: {
-      "/demo/encrypt.html": ["1234"],
+  locales: {
+    "/": {
+      // navbar
+      navbar: zhNavbar,
+
+      // sidebar
+      sidebar: zhSidebar,
+
+      footer: "Default footer",
+
+      displayFooter: true,
+
+      metaLocales: {
+        editLink: "编辑此页面",
+      },
+    },
+
+    "/en-us/": {
+      // navbar
+      navbar: enNavbar,
+
+      // sidebar
+      sidebar: enSidebar,
+
+      footer: "Default footer",
+
+      displayFooter: true,
+
+      metaLocales: {
+        editLink: "编辑此页面",
+      },
     },
   },
 
