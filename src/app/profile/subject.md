@@ -1,4 +1,16 @@
-﻿# 科目
+﻿---
+title: 科目
+description: 介绍科目的名称、授课教师等信息及其编辑方法。
+icon: fa-solid fa-book
+category:
+  - 使用指南
+tag:
+  - 科目
+  - 教师
+  - 课程安排
+---
+
+# 科目
 
 ![1690343413399](../image/Subject/1690343413399.png)
 

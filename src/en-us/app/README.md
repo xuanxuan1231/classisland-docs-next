@@ -17,7 +17,7 @@ Please refer to [Installation and Getting Started](setup.md).
 You can quickly get started with this application by reading this help document. It is recommended that you learn the basic functions of the software in the following order:
 
 - [Basics](basic.md)
-- **[Profile Settings](profile/profile-settings-page.md)**
+- **[Profile Settings](profile/README.md)**
     - [Class Schedule](profile/classplan.md)
     - [Time Layout](profile/time-layout.md)
     - [Subjects](profile/subject.md)
