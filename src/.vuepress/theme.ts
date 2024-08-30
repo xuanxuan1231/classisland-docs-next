@@ -36,7 +36,9 @@ export default hopeTheme({
       // sidebar
       sidebar: zhSidebar,
 
-      footer: "Default footer",
+      //  autocorrect-disable
+      footer: "本文档以 CC BY-NC-SA 4.0 许可协议授权。",
+      //  autocorrect-enable
 
       displayFooter: true,
 

@@ -20,7 +20,12 @@ actions:
 
 
 copyright: false
-footer: This document is licensed under CC BY-NC-SA 4.0.
+footer: |
+  This document is licensed under CC BY-NC-SA 4.0.
+  <br/>
+  <img src="https://www.beian.gov.cn/img/new/gongan.png" >
+  <a href="https://beian.miit.gov.cn/" target="_blank" > 沪ICP备2024084943号</a></br>
+  <a href="https://beian.mps.gov.cn/#/query/webSearch" target="_blank"> 沪公网安备31012002006157号 </a>
 ---
 # ClassIsland Documentation
 

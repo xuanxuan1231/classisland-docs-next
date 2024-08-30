@@ -7,7 +7,7 @@ heroImage: https://res.classisland.tech/logo.svg
 # bgImageDark: https://theme-hope-assets.vuejs.press/bg/6-dark.svg
 bgImageStyle:
   background-attachment: fixed
-heroText: ClassIsland文档
+heroText: ClassIsland 文档
 tagline: 适用于班级多媒体屏幕的课表的信息显示工具
 actions:
   - text: 使用说明
@@ -20,8 +20,15 @@ actions:
 
 
 copyright: false
-footer: 本文档以 CC BY-NC-SA 4.0 许可协议授权。
+footer: |
+  本文档以 CC BY-NC-SA 4.0 许可协议授权。
+  <br/>
+  <img src="https://www.beian.gov.cn/img/new/gongan.png" >
+  <a href="https://beian.miit.gov.cn/" target="_blank"> 沪ICP备2024084943号</a></br>
+  <a href="https://beian.mps.gov.cn/#/query/webSearch" target="_blank"> 沪公网安备31012002006157号 </a>
+footerHtml: true
 ---
+
 # ClassIsland 文档
 
 ![1724205131251](image/index/1724205131251.png)
