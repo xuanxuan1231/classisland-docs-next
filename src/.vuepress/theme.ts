@@ -10,10 +10,7 @@ export default hopeTheme({
     url: "https://classisland.tech",
   },
 
-  iconAssets: [ 
-    "fontawesome-with-brands",
-    "https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css"
-  ],
+  iconAssets: "fontawesome-with-brands",
 
   logo: "https://res.classisland.tech/logo.svg",
 
