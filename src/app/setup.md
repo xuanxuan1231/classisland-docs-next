@@ -13,35 +13,26 @@
 ::: details 在 Windows 7 中安装 ClassIsland
 
 > [!caution]
-> **不建议在 Windows 7 中使用 ClassIsland。**如果您执意要在 Windows 7 中使用 ClassIsland，请**务必按照以下步骤**完成环境设置等准备工作，否则可能会出现**严重的内存泄漏问题**。（ ClassIsland#91 ）
+> **不建议在 Windows 7 中使用 ClassIsland。**如果您执意要在 Windows 7 中使用 ClassIsland，请**务必按照以下步骤**完成准备工作，否则可能会出现**严重的内存泄漏问题**。（ ClassIsland#91 ）
+
+> [!caution]
+> 上方issue中的修复方式已经过时，会导致希沃白板无法启动。我们正在制作适配 .NET 6 的兼容版本供 Windows 7 使用。
 
 
 此外，**微软对 Windows 7 的支持已经在 2020/1/14 终止** [^1]。如果您在 Windows 7 中遇到系统相关问题， **开发者可能不会受理。** 并且在 Windows 10 以下的系统中，部分功能可能不可用。如果您接受这些缺陷，请继续阅读下文。
 
 1. **安装依赖项**
 
-    您需要按照[此处](https://learn.microsoft.com/zh-cn/dotnet/core/install/windows?tabs=net80#additional-deps)的指引根据您的操作系统版本安装额外的依赖项。
+    您需要按照[此处](https://learn.microsoft.com/zh-cn/dotnet/core/install/windows?tabs=net60#additional-deps)的指引根据您的操作系统版本安装额外的依赖项。
 
     对于 Windows 7，以下是您需要额外安装的依赖项：
 
     - Microsoft Visual C++ 2015-2019 Redistributable [64 位](https://aka.ms/vs/16/release/vc_redist.x64.exe) / [32 位](https://aka.ms/vs/16/release/vc_redist.x86.exe)
     - KB3063858 [64 位](https://www.microsoft.com/download/details.aspx?id=47442) / [32 位](https://www.microsoft.com/download/details.aspx?id=47409)
 
-2. **处理内存泄漏问题**
+（未完待续）
 
-    .NET 7 以及以上的运行时在 Windows 7 会产生严重的内存泄漏问题。您需要以管理员身份在命令提示符运行以下命令完成修复：
-
-    ``` shell
-    setx DOTNET_GCName clrgc.dll
-    setx DOTNET_EnableWriteXorExecute 0
-    ```
-
-    以上命令设置了以下环境变量。如果命令执行失败，您可以手动设置以下变量。
-    
-    | 环境变量 | 值 |
-    | --- | --- |
-    | `DOTNET_GCName` | `clrgc.dll` |
-    | `DOTNET_EnableWriteXorExecute` | `0` |
+在 .NET 6 版本发布后，我们会第一时间更新此处文档。最新信息可加入QQ讨论群了解。
 
 :::
 
