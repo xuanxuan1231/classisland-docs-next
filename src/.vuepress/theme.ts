@@ -83,6 +83,7 @@ export default hopeTheme({
     //   categoryId: "DIC_kwDOMp3pZs4CiBuf",
     //   mapping: "pathname",
     // },
+    searchPro: {},
     shiki: {
       themes: {
         light: "one-light",

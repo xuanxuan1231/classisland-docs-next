@@ -14,16 +14,9 @@ export default defineUserConfig({
     "/en-us/": {
       lang: "en-US",
       title: "ClassIsland Documentation",
-      description: "ClassIsland's documentation",
+      description: "documentation of ClassIsland",
     },
   },
-
-  plugins: [
-    searchProPlugin({
-      // 配置选项
-    }),
-  ],
-
   theme
   // 和 PWA 一起启用
   // shouldPrefetch: false,
