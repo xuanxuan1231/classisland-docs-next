@@ -16,8 +16,7 @@
 > **不建议在 Windows 7 中使用 ClassIsland。**如果您执意要在 Windows 7 中使用 ClassIsland，请**务必按照以下步骤**完成准备工作，否则可能会出现**严重的内存泄漏问题**。（ ClassIsland#91 ）
 
 > [!caution]
-> 上方issue中的修复方式已经过时，会导致希沃白板无法启动。我们正在制作适配 .NET 6 的兼容版本供 Windows 7 使用。
-
+> 如果您之前使用了设置环境变量或运行修复工具的方式使 ClassIsland 可以在 Windows 7 上运行，请回滚修复操作，因为此方法可能会引起部分 .NET Core 应用不兼容。
 
 此外，**微软对 Windows 7 的支持已经在 2020/1/14 终止** [^1]。如果您在 Windows 7 中遇到系统相关问题， **开发者可能不会受理。** 并且在 Windows 10 以下的系统中，部分功能可能不可用。如果您接受这些缺陷，请继续阅读下文。
 
@@ -30,9 +29,10 @@
     - Microsoft Visual C++ 2015-2019 Redistributable [64 位](https://aka.ms/vs/16/release/vc_redist.x64.exe) / [32 位](https://aka.ms/vs/16/release/vc_redist.x86.exe)
     - KB3063858 [64 位](https://www.microsoft.com/download/details.aspx?id=47442) / [32 位](https://www.microsoft.com/download/details.aspx?id=47409)
 
-（未完待续）
+2. 安装 [.NET 6 桌面运行时](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/runtime-desktop-6.0.33-windows-x64-installer)。
+3. 前往 [.NET 6 兼容版仓库](https://github.com/ClassIsland/ClassIsland-net6/releases)下载 ClassIsland。
 
-在 .NET 6 版本发布后，我们会第一时间更新此处文档。最新信息可加入QQ讨论群了解。
+关于此兼容版的详细信息，请参阅下文。
 
 :::
 
@@ -47,8 +47,8 @@
 | -- | -- | -- |
 | GitHub | [**GitHub 下载**](https://github.com/HelloWRC/ClassIsland/releases/latest) | [GitHub 下载](https://github.com/HelloWRC/ClassIsland/releases) |
 | AppCenter | [**AppCenter 下载**](https://install.appcenter.ms/users/hellowrc/apps/classisland/distribution_groups/public/releases/latest) | [AppCenter 下载](https://install.appcenter.ms/users/hellowrc/apps/classisland/distribution_groups/publicbeta/releases/latest) |
-:::
 
+:::
 
 <a id="third-party-downloads"></a>
 ::: info 其它下载渠道
@@ -57,8 +57,8 @@
 
 | 下载链接 | 密码 | 来源 |
 |:--:|:--:|:--:|
-| https://wwz.lanzouv.com/b00tao8lwb | 0556 | [MC_Sky](https://bilibili.com/read/cv35699004) |
-| https://pan.quark.cn/s/40d1dca97c3d | | |
+| <https://wwz.lanzouv.com/b00tao8lwb> | 0556 | [MC_Sky](https://bilibili.com/read/cv35699004) |
+| <https://pan.quark.cn/s/40d1dca97c3d> | | |
 
 感谢以上提供镜像的同学。
 :::
@@ -75,6 +75,14 @@
 ::: note
 AppCenter 下载渠道仅提供完整版。
 :::
+
+### 关于 .NET 6 兼容版
+
+为了使 ClassIsland 正常在 Windows 10 以下的低版本系统运行，我们制作了 .NET 6 兼容版本。此兼容版本会不定期与上游主仓库同步。您可以在[此处](https://github.com/ClassIsland/ClassIsland-net6/)查看兼容版仓库。
+
+以下功能在此兼容版不可用：
+
+- 插件功能
 
 ## 解压软件
 
