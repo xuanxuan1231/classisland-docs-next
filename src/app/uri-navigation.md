@@ -1,3 +1,12 @@
+---
+icon: fa-solid fa-compass
+category:
+  - 使用指南
+tag:
+  - 应用
+  - Uri 导航
+---
+
 # Uri 导航
 
 ::: info

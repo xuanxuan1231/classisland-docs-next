@@ -1,4 +1,16 @@
-﻿# 课表
+﻿---
+icon: fa-solid fa-chart-simple
+category:
+  - 使用指南
+tag:
+  - 档案
+  - 课表
+  - 临时课表
+  - 临时层
+  - 课表群
+  - 换课
+---
+# 课表
 
 ![1690342618455](../image/ClassPlan/1690342618455.png)
 

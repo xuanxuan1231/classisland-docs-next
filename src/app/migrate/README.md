@@ -1,5 +1,11 @@
 ---
 author: Hello8693
+icon: fa-solid fa-file-import
+category:
+  - 使用指南
+tag:
+  - 档案
+  - 课表迁移
 ---
 
 # 迁移课表

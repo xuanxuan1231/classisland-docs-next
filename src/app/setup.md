@@ -1,3 +1,12 @@
+---
+icon: fa-solid fa-download
+category:
+  - 使用指南
+tag:
+  - 应用
+  - 安装
+---
+
 # 安装与开始
 
 本文将介绍如何安装与开始使用 ClassIsland。

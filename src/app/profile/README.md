@@ -1,5 +1,11 @@
 ﻿---
-title: 档案设置
+title: 档案编辑
+icon: fa-solid fa-file-lines
+category:
+  - 使用指南
+tag:
+  - 档案
+  - 档案编辑器
 ---
 
 设置课表安排、时间表和科目的页面。

@@ -1,3 +1,14 @@
+---
+icon: fa-solid fa-database
+category:
+  - 使用指南
+tag:
+  - 应用
+  - 档案
+  - 数据
+  - 备份
+---
+
 # 应用数据备份
 
 本文章主要描述 ClassIsland 内置的备份功能，以及如何手动备份和恢复应用数据。

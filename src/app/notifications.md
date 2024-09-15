@@ -1,3 +1,12 @@
+---
+icon: fa-solid fa-bell
+category:
+  - 使用指南
+tag:
+  - 主界面
+  - 提醒
+---
+
 # 提醒
 
 ::: note

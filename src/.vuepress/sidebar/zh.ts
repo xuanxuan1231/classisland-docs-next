@@ -10,6 +10,7 @@ export const zhSidebar = sidebar({
   ],
   "/app/": [
     {
+      icon: "fa-solid fa-lightbulb",
       text: "应用帮助",
       children: [
         "index.md",
@@ -25,6 +26,7 @@ export const zhSidebar = sidebar({
             "subject.md",
             "attached-settings.md",
           ],
+          icon: "fa-solid fa-file-lines"
         },
         {
           text: "迁移课表",
@@ -33,6 +35,7 @@ export const zhSidebar = sidebar({
             "README.md",
             "ecs.md",
           ],
+          icon: "fa-solid fa-file-import"
         },
         "notifications.md",
         "uri-navigation.md",
@@ -45,6 +48,7 @@ export const zhSidebar = sidebar({
             "faq.md",
             "reporting-issue.md",
           ],
+          icon: "fa-solid fa-bug"
         },
       ],
     },
