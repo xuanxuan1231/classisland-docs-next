@@ -23,6 +23,7 @@ export const zhSidebar = sidebar({
             "classplan.md",
             "time-layout.md",
             "subject.md",
+            "attached-settings.md",
           ],
         },
         {
