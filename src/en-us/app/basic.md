@@ -4,7 +4,7 @@ This document mainly describes the basic operations of the application.
 
 ## Main Menu
 
-![1690356161339](image/Basic/1690356161339.png)
+![1690356161339](image/basic/1690356161339.png)
 
 When the application starts, it will create a tray icon in the system tray. After launching the software, the application's icon will be displayed in the taskbar tray. If you do not see this icon, please click the expand button on the left side of the tray to expand the tray menu and consider pinning the application's icon to the taskbar.
 
@@ -12,7 +12,7 @@ Clicking this icon will open the application's main menu. All functions of the s
 
 ## Main Interface
 
-![1690355954552](image/Basic/1690355954552.png)
+![1690355954552](image/basic/1690355954552.png)
 
 The application will create a window with a semi-transparent background on the desktop, docked at the top center of the screen by default. This window will display the enabled schedule and mark the current time point.
 
@@ -30,7 +30,7 @@ In [【Application Settings】→【Appearance】](classisland://app/settings/ap
 If you want to learn how to develop components, please refer to the [Development Documentation](../dev/components.md).
 :::
 
-![1722672907457](image/Basic/1722672907457.png)
+![1722672907457](image/basic/1722672907457.png)
 
 You can customize the information displayed on the main interface through the [【Components】](classisland://app/settings/components) feature.
 
@@ -42,11 +42,11 @@ To add a component, drag it from the component library to the component bar. Dra
 
 @tab Add Component
 
-![1722673345080](image/Basic/1722673345080.png)
+![1722673345080](image/basic/1722673345080.png)
 
 @tab Adjust Component Order
 
-![1722673350054](image/Basic/1722673350054.png)
+![1722673350054](image/basic/1722673350054.png)
 :::
 
 Click the 【Delete】 button next to the component to delete the selected component.
@@ -57,11 +57,11 @@ You can create, switch, export, and import different component configuration sch
 
 By default, the application will display additional information next to the current time point (as shown in the figure).
 
-![miniinfo](image/Basic/miniinfo.png)
+![miniinfo](image/basic/miniinfo.png)
 
 You can toggle the display of additional information and adjust the content of the displayed information in [Settings](classisland://app/settings/general).
 
-![1707456825303](image/Basic/1707456825303.png)
+![1707456825303](image/basic/1707456825303.png)
 
 ## Time Point End Countdown
 
@@ -71,8 +71,8 @@ This is not the same as the countdown to the start of a class. To adjust the cou
 
 By default, the application will display a countdown to the end of the time point 60 seconds before the end in the additional information display position.
 
-![1707463775853](image/Basic/1707463775853.png)
+![1707463775853](image/basic/1707463775853.png)
 
 You can adjust this feature in [Settings](classisland://app/settings/general).
 
-![1707456835205](image/Basic/1707456835205.png)
+![1707456835205](image/basic/1707456835205.png)
