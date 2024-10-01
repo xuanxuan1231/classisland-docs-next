@@ -1,9 +1,5 @@
 # 配置 ClassIsland **插件**开发环境
 
-::: warning
-本文档待补充。
-:::
-
 ## 开发环境
 
 **首先确保您的系统满足以下要求：**
@@ -45,6 +41,7 @@ git clone git@github.com:ClassIsland/ClassIsland.git
 ```shell
 gh repo clone ClassIsland/ClassIsland
 ```
+
 :::
 
 克隆完成后，运行以下命令进入 ClassIsland 源代码目录。
@@ -53,19 +50,21 @@ gh repo clone ClassIsland/ClassIsland
 cd ClassIsland
 ```
 
-目前插件功能还未下放到 `master` 分支上，需要签出开发分支 `dev`。如果您想签出到特定版本上，请使用对应版本的标签名（如 `1.4.3.0`）：
+克隆仓库后，默认处于 master 分支上，对应 ClassIsland 的稳定版本。建议在稳定版本的基础上开发插件，以获得较好的兼容性。如果您想签出到特定版本上，请使用对应版本的标签名（如 `1.5.0.2`）。
 
 ``` shell
-git checkout dev    # 签出到 dev 分支
 # 如果要签出到某个版本上，请使用标签名：
-# git checkout 1.4.3.0
+git checkout 1.5.0.2
 ```
 
-然后在 Powershell Core 运行以下命令构建 ClassIsland：
+然后在 **Powershell Core** 运行以下脚本：
 
-``` powershell
+``` shell
 ./tools/plugin/build.ps1
 ```
+
+> [!warning]
+> 运行此脚本后，请重启 Visual Studio 等开发工具，以更新相关环境变量。
 
 这个脚本会自动清理上次的构建，进行构建并设置相关的环境变量。这样就获得了 ClassIsland 的 Debug 构建。构建默认输出在 `（项目文件夹\ClassIsland\bin\Debug\net8.0-windows）`下。
 
