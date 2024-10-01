@@ -29,7 +29,7 @@
 
 ## 做出贡献
 
-如果您有意愿为本文档做出贡献，请先阅读[贡献指南](https://docs.classisland.tech/zh-cn/latest/community/contributing/)。我们欢迎向本仓库提交 [Pull Request](https://github.com/ClassIsland/classisland-docs/pulls)。
+如果您有意愿为本文档做出贡献，请先阅读[贡献指南](https://docs.classisland.tech/community/contributing.html)。我们欢迎向本仓库提交 [Pull Request](https://github.com/ClassIsland/classisland-docs/pulls)。
 
 ## 致谢
 
