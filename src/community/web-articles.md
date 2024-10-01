@@ -13,3 +13,5 @@
 [基于 C# 开发的班级多媒体屏幕的课表的信息显示工具 —— Dotnet工具箱](https://mp.weixin.qq.com/s/CzF2zldZmuc4hQdTXSy9nA)
 
 [[Windows] ClassIsland 1.4.3.1 一款适用于班级多媒体屏幕的课表信息显示工具 —— cmsn65](https://www.52pojie.cn/thread-1949580-1-1.html)
+
+[ClassIsland 开源项目教程 —— 宫萍润](https://blog.csdn.net/gitblog_00357/article/details/141880128)
