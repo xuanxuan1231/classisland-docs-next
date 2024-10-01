@@ -440,3 +440,7 @@ public class MyNotificationProvider : INotificationProvider, IHostedService
 ```
 
 上面高亮的代码中，我们将显示遮罩时播报的内容设置为“Hello world!”，将显示正文时播报的内容设置为在提醒设置中设置的自定义消息。
+
+## 高级提醒
+
+您还可以通过修改 NotificationRequest 的属性来定制更多提醒设置，详细请见文章[高级提醒请求](./advanced-request.md)。
