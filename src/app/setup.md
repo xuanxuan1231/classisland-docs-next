@@ -25,7 +25,7 @@ tag:
 > **不建议在 Windows 7 中使用 ClassIsland。**如果您执意要在 Windows 7 中使用 ClassIsland，请**务必按照以下步骤**完成准备工作，否则可能会出现**严重的内存泄漏问题**。（ ClassIsland#91 ）
 
 > [!caution]
-> 如果您之前使用了设置环境变量或运行修复工具的方式使 ClassIsland 可以在 Windows 7 上运行，请回滚修复操作，因为此方法可能会引起部分 .NET Core 应用不兼容。
+> 如果您之前使用了设置环境变量或运行修复工具的方式使 ClassIsland 可以在 Windows 7 上运行，请按照[此文章](./appendix/revert-win7-patching.md)的指引回滚修复操作，因为此方法可能会引起部分 .NET Core 应用不兼容。
 
 此外，**微软对 Windows 7 的支持已经在 2020/1/14 终止** [^1]。如果您在 Windows 7 中遇到系统相关问题， **开发者可能不会受理。** 并且在 Windows 10 以下的系统中，部分功能可能不可用。如果您接受这些缺陷，请继续阅读下文。
 
