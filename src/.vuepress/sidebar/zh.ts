@@ -50,6 +50,14 @@ export const zhSidebar = sidebar({
           ],
           icon: "fa-solid fa-bug"
         },
+        {
+          text: "附录",
+          prefix: "appendix/",
+          children: [
+            "revert-win7-patching.md",
+          ],
+          icon: "fa-solid fa-book"
+        },
       ],
     },
   ],
