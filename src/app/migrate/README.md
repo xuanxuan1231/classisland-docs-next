@@ -29,6 +29,7 @@ ClassIsland 提供一个转换配置文件用的在线工具，可以方便地�
 - [ ] 全能班辅
 - [ ] [Class Widgets](https://github.com/RinLit-233-shiroko/Class-Widgets/)
 - [ ] [Education Clock](https://github.com/Return-Log/Education-Clock/)
+- [ ] [ClassBoardSharp](https://github.com/Candlest/ClassBoardSharp)
 
 以下软件没有计划支持：
 
