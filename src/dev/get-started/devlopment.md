@@ -11,6 +11,7 @@
 - [.NET 8.0 SDK](https://dotnet.microsoft.com/zh-cn/download/dotnet/8.0)
 - [Visual Studio 2022](https://visualstudio.microsoft.com/)，包括【.NET 桌面开发】工作负载
 - [Git](https://git-scm.com/)
+- [Powershell Core](https://github.com/PowerShell/PowerShell)
 
 ## 拉取代码
 
@@ -43,6 +44,19 @@ gh repo clone ClassIsland/ClassIsland
 :::
 
 ## 编译与运行
+
+在首次编译运行时，需要先手动构建一次。
+
+> [!caution]
+> 请务必使用 Powershell Core（`pwsh.exe`）运行相关脚本，而不是使用系统内置的 Powershell（`powershell.exe`）。一般情况下 Windows 不会预装前者，所以您还需要手动安装 Powershell Core。
+
+在 **Powershell Core** 运行以下脚本：
+
+``` shell
+./tools/plugin/build.ps1
+```
+
+以上操作只用进行一次。在执行完上述操作后，可以按照下述步骤在 Visual Studio 里正常编译和运行 ClassIsland 了。
 
 1. 在 Visual Studio 中打开解决方案 `ClassIsland.sln`
 2. 将项目 `ClassIsland` 设置为启动项目

@@ -57,6 +57,9 @@ cd ClassIsland
 git checkout 1.5.0.2
 ```
 
+> [!caution]
+> 请务必使用 Powershell Core（`pwsh.exe`）运行相关脚本，而不是使用系统内置的 Powershell（`powershell.exe`）。一般情况下 Windows 不会预装前者，所以您还需要手动安装 Powershell Core。
+
 然后在 **Powershell Core** 运行以下脚本：
 
 ``` shell
