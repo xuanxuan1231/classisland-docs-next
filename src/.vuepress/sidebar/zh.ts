@@ -110,6 +110,15 @@ export const zhSidebar = sidebar({
           ],
         },
         "settings-page.md",
+        {
+          text: "跨进程通信",
+          prefix: "ipc/",
+          children: [
+            "README.md",
+            "ipc.md",
+            "reference.md"
+          ]
+        }
       ],
     },
   ],
