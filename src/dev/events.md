@@ -70,7 +70,7 @@ app.AppStarted += (o, e) => Console.WriteLine("AppStarted");
 
 在主计时器开始处理课表信息前触发。
 
-**服务：** `ClassIsland.Core.Abstractions.Services.ILessonService`
+**服务：** `ClassIsland.Core.Abstractions.Services.ILessonsService`
 
 **事件名：** `PreMainTimerTicked`
 
@@ -80,9 +80,9 @@ app.AppStarted += (o, e) => Console.WriteLine("AppStarted");
 
 在主计时器完成处理课表信息后触发。
 
-**服务：** `ClassIsland.Core.Abstractions.Services.ILessonService`
+**服务：** `ClassIsland.Core.Abstractions.Services.ILessonsService`
 
-**事件名：** `PostMainTimerTick`
+**事件名：** `PostMainTimerTicked`
 
 **参数：** _无_
 
@@ -104,7 +104,7 @@ app.AppStarted += (o, e) => Console.WriteLine("AppStarted");
 
 当进入课间休息类型的时间点时触发。
 
-**服务：** `ClassIsland.Core.Abstractions.Services.ILessonService`
+**服务：** `ClassIsland.Core.Abstractions.Services.ILessonsService`
 
 **事件名：** `OnBreakingTime`
 
@@ -114,7 +114,7 @@ app.AppStarted += (o, e) => Console.WriteLine("AppStarted");
 
 当放学（当前时间超出今天的时间表的最后一个时间点）时触发。
 
-**服务：** `ClassIsland.Core.Abstractions.Services.ILessonService`
+**服务：** `ClassIsland.Core.Abstractions.Services.ILessonsService`
 
 **事件名：** `OnAfterSchool`
 
