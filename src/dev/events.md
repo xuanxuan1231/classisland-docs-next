@@ -17,9 +17,9 @@ flowchart TD
     --> HostStartup["主机启动"]
     --> LaunchMainLoop["启动主循环"]
     --> AppStarted{{"AppStarted"}}
-    --> PreMainTimerTick{{"PreMainTimerTick"}}
+    --> PreMainTimerTick{{"PreMainTimerTicked"}}
     --> ProcessLessons["处理课表"]
-    --> PostMainTimerTick{{"PostMainTimerTick"}}
+    --> PostMainTimerTick{{"PostMainTimerTicked"}}
     --> PreMainTimerTick
 
     PostMainTimerTick
@@ -64,7 +64,7 @@ app.AppStarted += (o, e) => Console.WriteLine("AppStarted");
 
 ## 主计时器事件
 
-这些事件会每隔 50ms 触发一次，适用于进行轮询操作。要订阅这些事件，需要按照[基础知识](./basics.md#依赖注入)文档中关于依赖注入的文档获取 `ClassIsland.Core.Abstractions.Services.ILessonService` 服务。
+这些事件会每隔 50ms 触发一次，适用于进行轮询操作。要订阅这些事件，需要按照[基础知识](./basics.md#依赖注入)文档中关于依赖注入的文档获取 `ClassIsland.Core.Abstractions.Services.ILessonsService` 服务。
 
 ### 课表处理前事件
 
@@ -94,7 +94,7 @@ app.AppStarted += (o, e) => Console.WriteLine("AppStarted");
 
 当进入上课类型的时间点时触发。
 
-**服务：** `ClassIsland.Core.Abstractions.Services.ILessonService`
+**服务：** `ClassIsland.Core.Abstractions.Services.ILessonsService`
 
 **事件名：** `OnClass`
 
@@ -124,7 +124,7 @@ app.AppStarted += (o, e) => Console.WriteLine("AppStarted");
 
 当当前时间状态改变时触发。
 
-**服务：** `ClassIsland.Core.Abstractions.Services.ILessonService`
+**服务：** `ClassIsland.Core.Abstractions.Services.ILessonsService`
 
 **事件名：** `CurrentTimeStateChanged`
 
