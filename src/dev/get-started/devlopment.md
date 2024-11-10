@@ -43,6 +43,12 @@ gh repo clone ClassIsland/ClassIsland
 仓库名仅供参考，具体的仓库名请以您的 Fork 为准。
 :::
 
+仓库中包含了子模块。要正常编译 ClassIsland，还需要在克隆后和每次更新代码后在仓库根目录运行以下命令初始化子模块：
+
+``` shell
+git submodule update --init --recursive
+```
+
 ## 编译与运行
 
 在首次编译运行时，需要先手动构建一次。

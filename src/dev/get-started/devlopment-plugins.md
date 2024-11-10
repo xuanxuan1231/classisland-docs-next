@@ -50,6 +50,12 @@ gh repo clone ClassIsland/ClassIsland
 cd ClassIsland
 ```
 
+仓库中包含了子模块。要正常编译 ClassIsland，还需要在克隆后和每次更新代码后运行以下命令初始化子模块：
+
+``` shell
+git submodule update --init --recursive
+```
+
 克隆仓库后，默认处于 master 分支上，对应 ClassIsland 的稳定版本。建议在稳定版本的基础上开发插件，以获得较好的兼容性。如果您想签出到特定版本上，请使用对应版本的标签名（如 `1.5.0.2`）。
 
 ``` shell
@@ -77,6 +83,7 @@ git checkout 1.5.0.2
 
 ``` shell
 git pull
+git submodule update --init --recursive
 ./tools/plugin/build.ps1
 ```
 
