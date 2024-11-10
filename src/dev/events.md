@@ -17,9 +17,9 @@ flowchart TD
     --> HostStartup["主机启动"]
     --> LaunchMainLoop["启动主循环"]
     --> AppStarted{{"AppStarted"}}
-    --> PreMainTimerTick{{"PreMainTimerTick"}}
+    --> PreMainTimerTick{{"PreMainTimerTicked"}}
     --> ProcessLessons["处理课表"]
-    --> PostMainTimerTick{{"PostMainTimerTick"}}
+    --> PostMainTimerTick{{"PostMainTimerTicked"}}
     --> PreMainTimerTick
 
     PostMainTimerTick
@@ -64,13 +64,13 @@ app.AppStarted += (o, e) => Console.WriteLine("AppStarted");
 
 ## 主计时器事件
 
-这些事件会每隔 50ms 触发一次，适用于进行轮询操作。要订阅这些事件，需要按照[基础知识](./basics.md#依赖注入)文档中关于依赖注入的文档获取 `ClassIsland.Core.Abstractions.Services.ILessonService` 服务。
+这些事件会每隔 50ms 触发一次，适用于进行轮询操作。要订阅这些事件，需要按照[基础知识](./basics.md#依赖注入)文档中关于依赖注入的文档获取 `ClassIsland.Core.Abstractions.Services.ILessonsService` 服务。
 
 ### 课表处理前事件
 
 在主计时器开始处理课表信息前触发。
 
-**服务：** `ClassIsland.Core.Abstractions.Services.ILessonService`
+**服务：** `ClassIsland.Core.Abstractions.Services.ILessonsService`
 
 **事件名：** `PreMainTimerTicked`
 
@@ -80,9 +80,9 @@ app.AppStarted += (o, e) => Console.WriteLine("AppStarted");
 
 在主计时器完成处理课表信息后触发。
 
-**服务：** `ClassIsland.Core.Abstractions.Services.ILessonService`
+**服务：** `ClassIsland.Core.Abstractions.Services.ILessonsService`
 
-**事件名：** `PostMainTimerTick`
+**事件名：** `PostMainTimerTicked`
 
 **参数：** _无_
 
@@ -94,7 +94,7 @@ app.AppStarted += (o, e) => Console.WriteLine("AppStarted");
 
 当进入上课类型的时间点时触发。
 
-**服务：** `ClassIsland.Core.Abstractions.Services.ILessonService`
+**服务：** `ClassIsland.Core.Abstractions.Services.ILessonsService`
 
 **事件名：** `OnClass`
 
@@ -104,7 +104,7 @@ app.AppStarted += (o, e) => Console.WriteLine("AppStarted");
 
 当进入课间休息类型的时间点时触发。
 
-**服务：** `ClassIsland.Core.Abstractions.Services.ILessonService`
+**服务：** `ClassIsland.Core.Abstractions.Services.ILessonsService`
 
 **事件名：** `OnBreakingTime`
 
@@ -114,7 +114,7 @@ app.AppStarted += (o, e) => Console.WriteLine("AppStarted");
 
 当放学（当前时间超出今天的时间表的最后一个时间点）时触发。
 
-**服务：** `ClassIsland.Core.Abstractions.Services.ILessonService`
+**服务：** `ClassIsland.Core.Abstractions.Services.ILessonsService`
 
 **事件名：** `OnAfterSchool`
 
@@ -124,7 +124,7 @@ app.AppStarted += (o, e) => Console.WriteLine("AppStarted");
 
 当当前时间状态改变时触发。
 
-**服务：** `ClassIsland.Core.Abstractions.Services.ILessonService`
+**服务：** `ClassIsland.Core.Abstractions.Services.ILessonsService`
 
 **事件名：** `CurrentTimeStateChanged`
 
