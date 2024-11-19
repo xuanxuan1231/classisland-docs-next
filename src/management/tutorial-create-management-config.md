@@ -22,7 +22,8 @@
 
 **👉️按照指示[下载并安装 ClassIsland 本体](https://github.com/HelloWRC/ClassIsland?tab=readme-ov-file#%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8)。**
 
-!!! tip "如果您之前安装过 ClassIsland，建议您在另一位置安装一个新的实例，并在新的实例中完成本教学的内容。"
+::: tip 如果您之前安装过 ClassIsland，建议您在另一位置安装一个新的实例，并在新的实例中完成本教学的内容。  
+:::
 
 为了托管我们的集控配置，我们需要在 GitHub 上[新建一个存储库](https://github.com/new)。
 
@@ -75,6 +76,10 @@
 
 我们要将当前的更改提交到 GitHub 上。提交完成后，我们就能在 GitHub 上看到我们的文件了。
 
+::: tip
+此时，您也可以尝试将它们部署到 Netlify，Vercel 等静态托管平台，以获得更好的访问效果。
+:::
+
 接下来回到本地，我们在 ClassIsland 安装目录中新建一个集控配置文件，来告诉 ClassIsland 实例应该从哪里拉取集控清单。
 
 **👉️在 ClassIsland 安装文件夹中新建一个文件，并命名为`ManagementPreset.json`，并用本地文本编辑器打开。**
@@ -88,6 +93,9 @@
     "ManifestUrlTemplate": "https://raw.githubusercontent.com/（把这里替换成你的 GitHub 用户名）/classisland-mgmt-cfg/master/manifest.json"
 }
 ```
+::: tip
+如果您将配置文件部署到其他托管平台，请将 `raw.githubusercontent.com/（把这里替换成你的 GitHub 用户名）/classisland-mgmt-cfg/master` 替换为该托管平台的域名。下同。
+:::
 
 编辑好集控配置后，我们就可以将这个文件导入到 ClassIsland 实例中了。
 
@@ -145,7 +153,7 @@ ID 在此处可以标识 ClassIsland 实例。在后续的实际应用中，您�
 
 这些文件分别存储了科目、时间表和课表信息。尽管这些文件仍然以 ClassIsland 档案文件格式存储，但在加载时只会加载相应的部分。您也可以上传并使用自己的档案文件。
 
-**👉在`manifest.json`中添加以下高亮代码，并将所有 url 中中用户名部分替换成你的 GitHub 用户名。**
+**👉在`manifest.json`中添加以下高亮代码，并将所有 url 中用户名部分替换成你的 GitHub 用户名。**
 
 ```json title="manifest.json" hl_lines="4-15"
 {

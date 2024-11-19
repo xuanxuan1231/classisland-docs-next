@@ -1,10 +1,10 @@
 # 客户端识别
 
-您可以为每个 ClassIsland 实例自定义一个 id，来标识每个实例。您可以将自定义 id 设置为班级名、教室编号等易于识别的名称。
+您可以为每个 ClassIsland 实例自定义一个 ID，来标识每个实例。您可以将自定义 ID 设置为班级名、教室编号等易于识别的名称。
 
-除了自定义的 id 外，ClassIsland 还会生成一段唯一客户端 id（CUID），来标识每个实例。
+除了自定义的 ID 外，ClassIsland 还会生成一段唯一客户端 ID（CUID），来标识每个实例。
 
-这些信息可以在访问集控配置数据时，加入到 url 中。详细请见[url 模板](configure.md#url-template)。
+这些信息可以在访问集控配置数据时，加入到 url 中。详细请见 [url 模板](configure.md#url-template)。
 
 <a id="url-template"></a>
 

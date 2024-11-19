@@ -6,8 +6,8 @@ author: Hello8693
 
 ## 你需要准备
 
-1. Electron Class Schedule的课表配置文件，即 `scheduleConfig.js`
-2. 一个好用的浏览器，推荐Chrome 113以上
+1. Electron Class Schedule 的课表配置文件，即 `scheduleConfig.js`
+2. 一个好用的浏览器，推荐 Chrome 113 以上
 3. 最新版本的 ClassIsland
 
 ## 迁移步骤
